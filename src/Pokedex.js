@@ -1,5 +1,6 @@
 import React from "react";
 import Pokecard from "./Pokecard";
+import "./Pokedex.css"
 
 let pokeList = [
   { id: 4, name: 'Charmander', type: 'fire', base_experience: 62 },
@@ -12,7 +13,11 @@ let pokeList = [
   { id: 133, name: 'Eevee', type: 'normal', base_experience: 65 }
 ];
 
-const Pokedex = ({ pokelist }) => (pokelist.map(pokemon => <Pokecard key={pokemon.id} pokemon={pokemon} />))
+const Pokedex = ({ pokelist }) => (
+  <div className="pokedex">
+    {pokelist.map(pokemon => <Pokecard key={pokemon.id} pokemon={pokemon} />)}
+  </div>
+)
 
 
 export { pokeList, Pokedex };
